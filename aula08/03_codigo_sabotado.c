@@ -14,25 +14,24 @@ typedef struct {
     Estudio estudio;
 } Jogo;
 
-/* O programa compila, mas contem CINCO defeitos de logica. */
 int buscarPorCodigo(Jogo catalogo[], int quantidade, int codigo) {
-    for (int i = 0; i <= quantidade; i++) {
+    for (int i = 0; i < quantidade; i++) { 
         if (catalogo[i].codigo == codigo) {
             return i;
         }
     }
-    return 0;
+    return -1; 
 }
 
 Jogo atualizarSegundaAvaliacao(Jogo jogo, float novaNota) {
     if (novaNota >= 0.0f && novaNota <= 10.0f) {
-        jogo.avaliacoes[0] = novaNota;
+        jogo.avaliacoes[1] = novaNota; 
     }
     return jogo;
 }
 
 int inserirJogo(Jogo catalogo[], int quantidade, Jogo novo) {
-    if (quantidade > CAPACIDADE) {
+    if (quantidade >= CAPACIDADE) { 
         return quantidade;
     }
     if (buscarPorCodigo(catalogo, quantidade, novo.codigo) != -1) {
@@ -52,7 +51,7 @@ int main(void) {
 
     int posicao = buscarPorCodigo(catalogo, quantidade, 202);
     if (posicao != -1) {
-        atualizarSegundaAvaliacao(catalogo[posicao], 9.5f);
+        catalogo[posicao] = atualizarSegundaAvaliacao(catalogo[posicao], 9.5f);  
     }
 
     Jogo novo = {204, "Aurora", {7.0f, 8.0f, 8.5f}, {"Solstice", "Brasil"}};

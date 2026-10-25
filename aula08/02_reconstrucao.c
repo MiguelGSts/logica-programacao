@@ -17,19 +17,30 @@ typedef struct {
 int main(void) {
     Jogo catalogo[CAPACIDADE] = {
         {201, "Nebula",   {8.0f, 7.0f, 9.0f}, {"Atelie Orion", "Brasil"}},
-        {202, "Cripta",   {6.0f, 6.5f, 7.0f}, {"Luna Games",   "Portugal"}},
-        {203, "Circuito", {9.0f, 8.5f, 8.0f}, {"Byte Forge",   "Brasil"}}
+        {202, "Cripta",   {6.0f, 6.5f, 7.0f}, {"Luna Games", "Portugal"}},
+        {203, "Circuito", {9.0f, 8.5f, 8.0f}, {"Byte Forge", "Brasil"}}
     };
     int quantidade = 3;
+    float mediaNebula = 0.0;
 
-    /* MISSÃO A: listar somente os jogos cadastrados, mostrando
-       codigo, titulo, nome do estudio e pais. */
+    for(int cont = 0; cont < quantidade; cont++){
+        printf("%d - %s | %s (%s)\n", 
+        catalogo[cont].codigo, 
+        catalogo[cont].titulo, 
+        catalogo[cont].estudio.nome, 
+        catalogo[cont].estudio.pais);
+    }
 
-    /* MISSÃO B: atualizar a segunda avaliacao de Cripta para 9.5,
-       sem alterar a primeira ou a terceira. */
+    catalogo[1].avaliacoes[1] = 9.5f;
+    printf("\n== Avaliacoes de Cripta ==\n");
+    printf("Primeira avaliacao: %.1f\n", catalogo[1].avaliacoes[0]);
+    printf("Segunda avaliacao: %.1f\n", catalogo[1].avaliacoes[1]);
+    printf("Terceira avaliacao: %.1f\n\n", catalogo[1].avaliacoes[2]);
 
-    /* MISSÃO C: calcular e mostrar a media das tres avaliacoes
-       de Nebula (codigo 201). */
+    for(int cont = 0; cont < 3; cont++){
+        mediaNebula += catalogo[0].avaliacoes[cont];
+    }
+    printf("=> Media de Nebula: %.1f\n\n", (mediaNebula/3));
 
     printf("Jogos cadastrados: %d\n", quantidade);
     return 0;
