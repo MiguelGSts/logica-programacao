@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(void) {
+    int rodadas[4] = {3, 5, 2, 4};
+    int *ptr = rodadas;
+
+    printf("Terceira rodada: %d\n", *(ptr + 2));
+
+    /* TODO 3A: altere a segunda rodada para 8
+       usando o ponteiro. */
+
+    printf("Rodadas corrigidas: ");
+
+    /* TODO 3B: use um for para mostrar os quatro
+       valores por deslocamentos de ptr. */
+
+    printf("\n");
+    return 0;
+}
