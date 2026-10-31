@@ -1,0 +1,31 @@
+MISSÃO 06 | DIAGNÓSTICO DE ERROS
+
+Caso A
+Expressão problemática:
+Classificação:
+Correção proposta:
+Justificativa:
+
+Caso B
+Expressão problemática:
+Classificação:
+Correção proposta:
+Justificativa:
+
+Caso C
+Expressão problemática:
+Classificação:
+Correção proposta:
+Justificativa:
+
+Caso D
+Expressão problemática:
+Classificação:
+Correção proposta:
+Justificativa:
+
+Caso E
+Expressão problemática:
+Classificação:
+Correção proposta:
+Justificativa:
